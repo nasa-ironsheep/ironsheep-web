@@ -1,10 +1,10 @@
 angular.module('orggue')
-.directive('routes',function(Config){
+.directive('oneroute',function(Config){
   return{
     restrict : 'E',
     replace : true,
     scope: {route : '='},
-    templateUrl : Config.baseViews + 'route/index.html',
+    templateUrl : Config.baseViews + 'element/route.html',
     controller : function($scope,middleware){
       middleware.eachLoacation({
         url:'/IRONSHEEP-SERVER/services/ruta',

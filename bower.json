@@ -24,6 +24,7 @@
     "angulartics-google-analytics": "~0.1.1",
     "bootstrap": "^3.3.6",
     "angular-google-maps": "^2.3.2",
-    "lodash": "^4.11.2"
+    "lodash": "^4.11.2",
+    "ngCordova": "^0.1.26-alpha"
   }
 }

@@ -6,6 +6,8 @@ angular.module('orggue')
     url : 'rutas',
     lngDestination : 0,
     latDestination : 0,
+    lngOrigin : 0,
+    latOrigin : 0,
     origin : '',
     destination : '',
     region : 'es',
@@ -19,38 +21,32 @@ angular.module('orggue')
         origin: filters.origin,
         destination: filters.destination,
         region: filters.region,
-        travelMode: maps.TravelMode['WALKING'],
-        optimizeWaypoints: true
+        travelMode: maps.TravelMode['WALKING']
       };
 
-      directionsService.route(request, function(response, StartRoutetus) {
+      directionsService.route(request, function(response) {
         if (typeof callback == 'function') {
-          callback(response);
+          callback(response.routes);
         }
       });
     });
-    //return api.call(filters.url,params,{},function(data){
-    //if (typeof callback == 'function') {
-    //callback(data);
-    //}
-    //});
   };
 
   return {
     location : function(){
       $rootScope.$broadcast('StartRoute');
       var send = location(filters, function(data){
-        console.log(data)
-        $rootScope.$broadcast('EndRoute', {route: data.routes});
+        $rootScope.$broadcast('EndRoute', {route: data});
       });
       backupRoutes.push(send);
     },
     eachLoacation : function(params, callback){
       var param = {
-        //TODO
+        "lng": params.lng,
+        "lat": params.lat
       }
 
-      return api.call(params.url,param,{},function(data){
+      return api.call(params.url,{},[param],function(data){
         if (typeof callback == 'function') {
           callback(data);
         }

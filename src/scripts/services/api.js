@@ -7,6 +7,9 @@ angular.module('orggue')
 
       $http({
         url: Config.apiBase + url,
+        headers: {
+          'Content-Type': "application/json"
+        },
         method : method,
         params : params,
         timeout : canceler.promise,

@@ -1,7 +1,36 @@
-<div class="container" style="padding-top: 50px;">
+<div class="container">
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
-      <routes route="route" ng-repeat="route in routes"></routes>
+      <div ng-repeat="route in routes">
+        <p>
+        <h4>
+          RUTA {{$index + 1}}
+        </h4>
+        <strong>Origen: </strong>{{route.legs[0].start_address}}</br>
+        <strong>Destino: </strong>{{route.legs[0].end_address}}
+        </p>
+
+        <div ng-show="route.greenZone">
+          <div style="display: inline-block; vertical-align:middle; text-align: center;width:100%;">
+            <div class="route-info fa fa-exclamation-triangle" style="color:grey;">{{route.greenZone.erro*100|number :2}}%</div>
+            <div class="route-info fa fa-calendar" style="color:grey;">{{route.greenZone.date}}</div>
+            <div class="route-info fa" style="color:grey;">{{route.weather.main}}</div>
+            <div class="route-info fa fa-sun-o" style="color:#5bc0de;">{{route.weather.temp|number :2}}ºC</div>
+            <div class="route-info fa fa-info" style="color:#5bc0de;">{{route.weather.pressure}}Hpa</div>
+            <div class="route-info fa fa-tint" style="color:#5bc0de;">{{route.weather.humidity|number :2}}%</div>
+            <div class="route-info fa fa-envira" style="color:#5bc0de;">{{route.weather.windSpeed}}m/s</div>
+          </div>
+          <div class="progress" style="color:white; text-align:center;">
+            <div class="progress-bar-success" role="progressbar" aria-valuenow="{{route.greenZone.grass}}" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              {{route.greenZone.grass* 100| number :1}}% of grass
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <style type="text/css" media="all">
+.route-info{
+  margin: 0 5px;
+}
+  </style>

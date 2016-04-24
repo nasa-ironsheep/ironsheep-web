@@ -1,16 +1,17 @@
-<div class="container" style="padding-top: 50px;">
+<div class="container">
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
       <form name="leaveEmail" ng-submit="sendLocation()" role="form">
+        <img src="/assets/img/logo.png" class="img-rounded" alt="iron sheep" width="30%" height="30%" style="padding-bottom:1.5em;">
         <div class="form-group has-feedback has-feedback-left">
-          <button class="form-control input-lg" id="inputlg" ng-model="contact.start" type="text">{{contact.start}}</button>
+          <input class="form-control input-lg" id="inputlg" type="text" ng-model="origin" placeholder="40.4381311, -3.8196193">
           <i class="fa fa-location-arrow form-control-feedback" style="color:grey;"></i>
         </div>
         <div class="form-group has-feedback has-feedback-left">
-          <button class="form-control input-lg" id="inputlg" ng-click="alert(1);" ng-model="contact.end" type="text">{{contact.end}}</button>
+          <input class="form-control input-lg" id="inputlg" ng-model="destination" type="text" placeholder="39.8622699, -4.0344493">
           <i class="fa fa-location-arrow form-control-feedback" style="color:grey;"></i>
         </div>
-        <button type="submit" ng-click="emailSent = true" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-check" aria-hidden="true"></i></button>
+        <button type="submit" ng-click="emailSent = true" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-check" aria-hidden="true"></i></button>
       </form>
       <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
     </div>

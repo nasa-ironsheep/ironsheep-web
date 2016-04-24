@@ -6,10 +6,13 @@ angular.module("orggue", ['ui.router','ngRoute','ngAnimate','uiGmapgoogle-maps']
 })
 .config(function(Config,$stateProvider,$urlRouterProvider,$locationProvider,uiGmapGoogleMapApiProvider){
   $stateProvider
-  .state('work',{
-    url : "/work",
-    controller : 'workCtrl',
-    templateUrl : Config.baseViews + "element/work.html"
+  .state('map',{
+    url : "/map/{id}",
+    controller : 'mapCtrl',
+    templateUrl : Config.baseViews + "element/map.html",
+    params:{
+      id:{squash:true}
+    }
   })
   .state('routes',{
     url : "/routes",
@@ -20,7 +23,11 @@ angular.module("orggue", ['ui.router','ngRoute','ngAnimate','uiGmapgoogle-maps']
     url : "/",
     controller : 'homeCtrl',
     templateUrl : Config.baseViews + "element/home.html"
-  });
+  })
+  .state('phones',{
+    url : "/phones",
+    templateUrl : Config.baseViews + "element/phones.html"
+  })
   $urlRouterProvider.otherwise('/');
 
   $locationProvider.html5Mode(true);
