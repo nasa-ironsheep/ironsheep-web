@@ -1,0 +1,18 @@
+<div class="container" style="padding-top: 50px;">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <form name="leaveEmail" ng-submit="sendLocation()" role="form">
+        <div class="form-group has-feedback has-feedback-left">
+          <button class="form-control input-lg" id="inputlg" ng-model="contact.start" type="text">{{contact.start}}</button>
+          <i class="fa fa-location-arrow form-control-feedback" style="color:grey;"></i>
+        </div>
+        <div class="form-group has-feedback has-feedback-left">
+          <button class="form-control input-lg" id="inputlg" ng-click="alert(1);" ng-model="contact.end" type="text">{{contact.end}}</button>
+          <i class="fa fa-location-arrow form-control-feedback" style="color:grey;"></i>
+        </div>
+        <button type="submit" ng-click="emailSent = true" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-check" aria-hidden="true"></i></button>
+      </form>
+      <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+    </div>
+  </div>
+</div>

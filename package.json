@@ -1,0 +1,54 @@
+{
+  "name": "mrorggue",
+  "version": "1.0.0",
+  "description": "personal web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orggue/MrOrggue.git"
+  },
+  "keywords": [
+    "personal",
+    "web"
+  ],
+  "author": "orggue",
+  "bugs": {
+    "url": "https://github.com/orggue/MrOrggue/issues"
+  },
+  "homepage": "https://github.com/orggue/MrOrggue#readme",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-filter": "^2.0.2",
+    "gulp-ignore": "^1.2.1",
+    "gulp-inject": "^1.3.1",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-mocha": "^2.1.2",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "main-bower-files": "^2.9.0",
+    "nib": "^1.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "compression": "^1.5.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.1",
+    "instagram-node": "^0.5.7",
+    "node-mandrill": "^1.0.1",
+    "octonode": "^0.7.1",
+    "swig": "^1.4.2",
+    "winston": "^1.0.1",
+    "winston-papertrail": "^1.0.1"
+  }
+}
