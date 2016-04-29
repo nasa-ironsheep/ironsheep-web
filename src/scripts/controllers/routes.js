@@ -11,7 +11,7 @@ angular.module('orggue')
 
       $timeout(function(){
         middleware.eachLoacation({
-          url:'http://10.10.11.64:8080/IRONSHEEP-SERVER-0.1/services/ruta',
+          url:'http://188.213.171.9:8080/IRONSHEEP-SERVER-0.1/services/ruta',
           lng: middleware.getFilter('lngDestination'),
           lat: middleware.getFilter('latDestination')
         }, function(data){
